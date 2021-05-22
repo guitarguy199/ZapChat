@@ -1,0 +1,6 @@
+framework module Pods_ZapChat {
+  umbrella header "Pods-ZapChat-umbrella.h"
+
+  export *
+  module * { export * }
+}
