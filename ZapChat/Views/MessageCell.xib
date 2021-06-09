@@ -64,6 +64,7 @@
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <connections>
                 <outlet property="label" destination="cVh-pN-cQW" id="3cK-fK-3eQ"/>
                 <outlet property="leftImageView" destination="CWe-cK-VCz" id="gWW-b7-ELO"/>

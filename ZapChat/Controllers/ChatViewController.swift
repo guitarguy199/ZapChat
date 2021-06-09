@@ -11,8 +11,7 @@ class ChatViewController: UIViewController {
     
     let db = Firestore.firestore()
     
-    var messages: [Message] = [
-    ]
+    var messages: [Message] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,12 +20,11 @@ class ChatViewController: UIViewController {
         tableView.dataSource = self
         
         tableView.register(UINib(nibName: K.cellNibName, bundle: nil), forCellReuseIdentifier: K.cellIdentifier)
+        tableView.backgroundColor = UIColor.white
         
         loadMessages()
         
         navigationController?.title = K.appName
-        
-    
     }
     
     func loadMessages() {
@@ -54,7 +52,6 @@ class ChatViewController: UIViewController {
                                 let indexPath = IndexPath(row: self.messages.count - 1, section: 0)
                                 self.tableView.scrollToRow(at: indexPath, at: .top, animated: true)
                             }
-
                         }
 
                         print(doc.data())
@@ -96,11 +93,7 @@ class ChatViewController: UIViewController {
       print ("Error signing out: %@", signOutError)
     }
       
-    }
-    
-    
-    
-    
+    } 
 }
 
 extension ChatViewController: UITableViewDataSource {
@@ -127,34 +120,6 @@ extension ChatViewController: UITableViewDataSource {
             cell.messageBubble.backgroundColor = UIColor(named: K.BrandColors.purple)
             cell.label.textColor = UIColor(named: K.BrandColors.lightPurple)
         }
-        
-        
-        
         return cell
     }
-    
-    
 }
-
-
-//struct K {
-//    static let appName = "⚡️FlashChat"
-//    static let cellIdentifier = "ReusableCell"
-//    static let cellNibName = "MessageCell"
-//    static let registerSegue = "RegisterToChat"
-//    static let loginSegue = "LoginToChat"
-//
-//    struct BrandColors {
-//        static let purple = "BrandPurple"
-//        static let lightPurple = "BrandLightPurple"
-//        static let blue = "BrandBlue"
-//        static let lighBlue = "BrandLightBlue"
-//    }
-//
-//    struct FStore {
-//        static let collectionName = "messages"
-//        static let senderField = "sender"
-//        static let bodyField = "body"
-//        static let dateField = "date"
-//    }
-//}
